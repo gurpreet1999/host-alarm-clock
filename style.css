@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #d1dae3;
+  height: auto;
+}
+
+.clock {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d1dae3 url(clock.png);
+  background-size: cover;
+  border: 4px solid #cad3dc;
+  border-radius: 50%;
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 10px rgba(0, 0, 0, 0.1),
+    inset -8px -8px 15px rgba(255, 255, 255, 0.5),
+    inset 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+  position: absolute;
+}
+
+.clock .hour .hr {
+  width: 160px;
+  height: 160px;
+}
+
+.clock .min .mn {
+  width: 190px;
+  height: 190px;
+}
+.clock .sec .sc {
+  width: 230px;
+  height: 230px;
+}
+
+.hr,
+.mn,
+.sc {
+  display: flex;
+
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.hr::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: #ff105e;
+  border-radius: 6px 6px 6px 0;
+  z-index: 10;
+}
+.mn::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 90px;
+  background: black;
+  border-radius: 6px 6px 6px 0;
+  z-index: 11;
+}
+.sc::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: #008eff;
+  border-radius: 6px 6px 6px 0;
+  z-index: 12;
+}
+
+#time {
+  margin-top: 54px;
+  display: flex;
+  padding: 10px 20px;
+  font-size: 2em;
+  font-weight: 600;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 40px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#time div {
+  position: relative;
+  width: 60px;
+
+  text-align: center;
+  font-weight: 500;
+  color: #008eff;
+}
+
+#time div:nth-child(1)::after,
+#time div:nth-child(2)::after {
+  content: ":";
+  position: absolute;
+  right: -4px;
+  color: rgb(13, 6, 6);
+}
+
+#time div:last-child {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+#time div:nth-child(2)::after {
+  animation: animate 1s steps(1) infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.content {
+  margin-top: 24px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.content.disable {
+  cursor: no-drop;
+}
+.content .column {
+  margin-left: 3px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  width: 200px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.1);
+}
+.content.disable .column {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.column select {
+  width: 100%;
+  height: 53px;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 19px;
+}
+button {
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 17px 17px;
+  margin-top: 29px;
+  border-radius: 5px;
+  background: #4a98f7;
+ 
+}
+
+.myalarm {
+    margin-top: 25px;
+  width: 500px;
+  height: auto;
+  border: 1px solid #b5b5c3;
+display: flex;
+flex-direction: column;
+align-items: center;
+border-radius:50px;
+padding:20px;
+margin-bottom: 50px;
+  
+}
+.myalarm h1{
+
+    color: #008eff;
+    margin-bottom: 12px;
+}
+
+
+.timing div {
+    position: relative;
+    width: 60px;
+  font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    color: #008eff;
+  }
+
+  .butttn{
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+   padding: 7px 7px;
+    margin-top: 2px;
+    border-radius: 5px;
+    background: #4a98f7;
+ margin-right:5px;
+  
+  }
+.myalarm li {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:400px;
+    height: 50px;
+    border: 1px solid #554f4f;
+    list-style: none;
+    border-radius: 10px;
+  }
+  
+.myalarm  .timing{
+
+    display:flex;
+    align-items: center;
+  
+
+}
+
+.timing  div:nth-child(1)::after,
+.timing  div:nth-child(2)::after {
+    font-size: 20px;
+    font-weight: 900;
+  content: ":";
+  position: absolute;
+  right: -4px;
+  color: rgb(13, 6, 6);
+}
+
+.timing  div:last-child {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+
