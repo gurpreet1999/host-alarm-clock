@@ -11,11 +11,23 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
 		},
+		"ls_datalake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_datalake'"
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://mystorage12356478.dfs.core.windows.net/"
 		},
 		"github_connector_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/"
+		},
+		"ls_datalake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mystorage12356478.dfs.core.windows.net/"
+		},
+		"ls_github_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://raw.githubusercontent.com/"
 		},
@@ -49,11 +61,20 @@
 					"AzureDataLakeStorage1_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					},
+					"ls_datalake_accountKey": {
+						"value": "[parameters('ls_datalake_accountKey')]"
+					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
 					"github_connector_properties_typeProperties_url": {
 						"value": "[parameters('github_connector_properties_typeProperties_url')]"
+					},
+					"ls_datalake_properties_typeProperties_url": {
+						"value": "[parameters('ls_datalake_properties_typeProperties_url')]"
+					},
+					"ls_github_properties_typeProperties_url": {
+						"value": "[parameters('ls_github_properties_typeProperties_url')]"
 					}
 				}
 			},
